@@ -1,0 +1,157 @@
+<ion-app>
+  <ion-tabs>
+
+    <ion-tab tab="registro">
+      <ion-header translucent>
+        <ion-toolbar>
+          <ion-title>Registro
+            <button class="btn btn-outline-danger" (click)="logOut()" style="width: 25%;float: right;" >LogOut</button>
+          </ion-title>
+         
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content fullscreen class="ion-padding">
+
+
+
+        <div class="container">
+
+
+          <div class="row">
+            <h3 class="right">
+              <br> {{nombre}} {{apellido}}   
+            </h3>
+          </div>
+      
+          <h5 class="center">Registro de asistencia</h5>
+      
+      
+      
+          <div *ngFor="let c of courses" class="col-md-12">
+            <br>
+            <button type="button" class="btn btn-outline-secondary" (click)="toViewAssists(c.id_curso,c.nombre_curso)"> {{c.nombre_curso}}</button>
+          </div>
+      
+      </div>
+
+
+
+
+
+      </ion-content>
+    </ion-tab>
+
+
+
+
+
+
+
+
+
+
+
+    <ion-tab tab="alumnos">
+      <ion-header translucent>
+        <ion-toolbar>
+          <ion-title>Asignaciones
+            <button class="btn btn-outline-danger" style="width: 25%;float: right;" (click)="logOut()" >LogOut</button>
+          </ion-title>
+         
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content fullscreen class="ion-padding">
+    
+        
+        <div class="container">
+
+
+          <div class="row">
+            <h3 class="right">
+              <br> {{nombre}} {{apellido}}   
+            </h3>
+          </div>
+      
+          <h5 class="center">Alumnos</h5>
+      
+      
+      
+          <div *ngFor="let c of courses" class="col-md-12">
+            <br>
+            <button type="button" class="btn btn-outline-secondary" (click)="toViewList(c.id_curso, c.nombre_curso)"> {{c.nombre_curso}}</button>
+          </div>
+      
+      </div>
+
+
+
+      </ion-content>
+    </ion-tab>
+
+
+
+
+
+
+    <ion-tab tab="asistencia">
+      <ion-header translucent>
+        <ion-toolbar>
+          <ion-title>Asistencias
+            <button class="btn btn-outline-danger" style="width: 25%;float: right;" (click)="logOut()">LogOut</button>
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content fullscreen class="ion-padding">
+       
+
+
+        <div class="container">
+
+
+          <div class="row">
+            <h3 class="right">
+              <br> {{nombre}} {{apellido}}   
+            </h3>
+          </div>
+      
+          <h5 class="center">Asistencia</h5>
+      
+      
+      
+          <div *ngFor="let c of courses" class="col-md-12">
+            <br>
+            <button type="button" class="btn btn-outline-secondary" (click)="toFetchDate(c.id_curso, c.nombre_curso)"> {{c.nombre_curso}}</button>
+          </div>
+      
+      </div>
+
+
+
+      </ion-content>
+    </ion-tab>
+
+    <ion-tab-bar slot="bottom">
+
+      
+      <ion-tab-button tab="registro">
+        <ion-label>Registros</ion-label>
+        <ion-icon name="apps-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="alumnos">
+        <ion-label>Alumnos</ion-label>
+        <ion-icon name="people-circle-outline"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="asistencia">
+        <ion-label>Asistencias</ion-label>
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-tab-button>
+
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-app>

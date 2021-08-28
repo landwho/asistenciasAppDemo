@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title [routerLink]="['/tabs']">Fecha y Asistencia</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <div class="container">
+
+    <div class="row ">
+      <h5 class="center">
+        <br class="mb-3"> {{courseName}}  </h5>
+    </div>
+
+    <br>
+
+    <div class="mb-3">
+      <label class="form-label">Fecha:</label>
+      <input type="date" [(ngModel)]="date" class="form-control"> 
+    </div>
+
+
+
+  <div class="row center">
+    <div class="col-md-12">
+      <button type="button" class="btn btn-outline-secondary" (click)="toFetchDate()">Ver</button>
+    </div>
+  </div>
+
+</div>
+
+
+<br>
+
+
+<div *ngIf="assistFlag==1" class="container">
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Carnet</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let a of assistencias">
+        <td>{{a.nombre_estudiante}}</td>
+        <td>{{a.apellido_estudiante}}</td>
+        <td>{{a.carnet_estudiante}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  
+
+
+
+</div>
+
+</ion-content>

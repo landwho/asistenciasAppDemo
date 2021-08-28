@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title [routerLink]="['/tabs']">Registro de Asistencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+
+
+
+
+  <div class="container">
+
+    <div class="row ">
+      <h5 class="center">
+        <br>
+        <br class="mb-3"> {{courseName}}  </h5>
+    </div>
+
+
+
+</div>
+
+
+<br>
+
+
+<div *ngIf="assistFlag==1" class="container">
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Carnet</th>
+        <th scope="col">Sabados</th>
+        <th class="center" scope="col">%</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let a of assistencias">
+        <td>{{a.nombre_estudiante}} {{a.apellido_estudiante}}</td>
+        <td>{{a.carnet_estudiante}}</td>
+        <td class="center">{{a.Sabados}}</td>
+        <td>{{a.punteo | number: '1.1-2'}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  
+
+
+
+</div>
+
+
+
+
+
+
+
+</ion-content>

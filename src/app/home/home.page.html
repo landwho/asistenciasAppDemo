@@ -1,20 +1,66 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Alumno</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+
+
+<ion-content class="flexBox">
+
+<div class="center">
+  <img src="../../assets/init/1438639384.png" alt="">
+</div>
+  
+  
+  
+  <h1 class="center">Control de Asistencia</h1>
+ 
+  
+  
+  <div class="container">
+    <div class="mb-3">
+      <input type="text" class="form-control" [(ngModel)]="carnet" name="carnet" placeholder="No. Carnet">
+    </div>
+    <div class="mb-3">
+      <input type="password" class="form-control" [(ngModel)]="pass" name="carnet" placeholder="password">
+    </div>
+  
+  
+    <div class="row center">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-outline-secondary" (click)="toControlPanel()">Aceptar</button>
+        <br> <br>
+        <span class="error"> {{error}}</span>
+      </div>
+    </div>
+  
   </div>
-</ion-content>
+  
+  
+
+  <div *ngIf="loadingFlag" class="load-6">
+    <div class="letter-holder flexBox">
+      <div class="l-1 letter">L</div>
+      <div class="l-2 letter">o</div>
+      <div class="l-3 letter">a</div>
+      <div class="l-4 letter">d</div>
+      <div class="l-5 letter">i</div>
+      <div class="l-6 letter">n</div>
+      <div class="l-7 letter">g</div>
+      <div class="l-8 letter">.</div>
+      <div class="l-9 letter">.</div>
+      <div class="l-10 letter">.</div>
+    </div>
+  </div>
+
+
+  <br><br>
+  
+  </ion-content>
+  
